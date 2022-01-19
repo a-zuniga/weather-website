@@ -3,7 +3,7 @@ const request = require('request')
 const forecast = (latitude, longitude, callback) => {
 
     // WeatherStack API URL
-    const url = `http://api.weatherstack.com/current?access_key=f046cbeda4189860c61564b61b51973a&query=${latitude},${longitude}&units=f`
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=38b4c532f4a6a31040d743c1aeaf9265&units=imperial`
 
     request(
         {
@@ -19,7 +19,7 @@ const forecast = (latitude, longitude, callback) => {
                 callback('Unable to get weather for given location. Try another search.', undefined)
             }
             else {
-                callback(undefined, `The current temperature is ${body.current.temperature} ${'\u2109'} but feels like ${body.current.feelslike} ${'\u2109'}. The weather is ${body.current.weather_descriptions[0]}. There is ${body.current.precip}% of rain!`)
+                callback(undefined, `The current temperature is ${body.main.temp} ${'\u2109'} but feels like ${body.main.feels_like} ${'\u2109'}. The weather is ${body.weather[0].main} with ${body.weather[0].description}.`)
             }
         })
 }
