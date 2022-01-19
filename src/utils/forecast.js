@@ -16,10 +16,10 @@ const forecast = (latitude, longitude, callback) => {
                 callback('Unable to connect to WeatherStack API!', undefined)
             }
             else if (body.error) {
-                callback('Unable to get weather for given location. Try another coordinate pair.', undefined)
+                callback('Unable to get weather for given location. Try another search.', undefined)
             }
             else {
-                callback(undefined, `It is currently ${body.current.temperature} degrees out. The weather is ${body.current.weather_descriptions[0]}.`)
+                callback(undefined, `The current temperature is ${body.current.temperature} ${'\u2109'} but feels like ${body.current.feelslike} ${'\u2109'}. The weather is ${body.current.weather_descriptions[0]}. There is ${body.current.precip}% of rain!`)
             }
         })
 }
