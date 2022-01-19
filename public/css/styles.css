@@ -33,9 +33,16 @@ header a{
     text-decoration: none;
 }
 
-.portrait{
-    width: 250px;
+a {
+    color: #4d97dc;
+    text-decoration: none;
 }
+
+code{
+    color: brown;
+    font-size: large;
+}
+
 
 .main-content{
     flex-grow: 1;

@@ -13,8 +13,60 @@
 <body>
     <div class="main-content">
         {{>header}}
-        <p>This site was created by {{name}}. It uses data from mapbox.com and darksky.net!</p>
-        <img src="./img/spyro.jpg" class="portrait">
+        <h3>Application Purpose</h3>
+        <ul>
+            <li>Get the weather from anywhere in the world through a basic search!</li>
+        </ul>
+
+        <h3>Motivation</h3>
+        <ul>
+            <li>To get familiar with using third party API's and building basic functionaly from them.</li>
+            <li>Javascript refresher and a chance to work with <a href="https://nodejs.org/en/about/">node.js</a> and
+                several npm libraries.</li>
+            <li>Start the journey of becoming a Javascript ninja!</li>
+        </ul>
+
+        <h3>Technologies Used</h3>
+        <ol>
+            <li>Node js</li>
+            <li>NPM Libraries (dependecies listed below)</li>
+            <li>Heroku</li>
+            <li>Git</li>
+        </ol>
+
+        <h3>Application Dependecies</h3>
+        <code>
+            <strong>"dependencies"</strong>: {
+            "express": "^4.17.2",
+            "hbs": "^4.2.0",
+            "request": "^2.88.2"
+            },
+        </code>
+        <br>
+        <code>
+            <strong>"devDependencies"</strong>: {
+            "nodemon": "^2.0.15"
+            }
+        </code>
+        
+        <h3>API's Used</h3>
+        <ol>
+            <li><a href="https://docs.mapbox.com/api/search/geocoding/">Mapbox Geocoding API</a>
+                <ul>
+                    <li><strong>Reason:</strong> forward geocoding and reverse geocoding.</li>
+                    <li>With a geocoding service, I can parse user input and generate coordinate pairs.</li>
+                    <li>Coordinate pairs are then sent off to the OpenWather API to generate respective forecast data.</li>
+                </ul>
+            </li>
+            
+            <li><a href="https://openweathermap.org/current">OpenWeather - Current Weather Data API</a>
+                <ul>
+                    <li><strong>Reason:</strong> 1,000,000 calls/month on the free tier!</li>
+                    <li>I was originally using a different API to gather forecast data but quickly hit their request limit.</li>
+                </ul>
+            </li>
+        </ol>
+        
     </div>
 
     {{>footer}}

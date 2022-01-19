@@ -66,25 +66,13 @@ app.get('/weather', (req, res) => {
     })
 })
 
-app.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: "You must provide a seach term."
-        })
-    }
-
-    console.log(req.query.search)
-    res.send({
-        products: []
-    })
-})
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: "Help",
         name: "Alejandro Zuniga",
-        message: "Run into any issues? Please email our site administrator at ",
-        admin_email: "help@weather.com"
+        message: "Run into any issues using the application?",
+        admin_email: "azunigas [at] gmu [dot] edu"
     })
 })
 
